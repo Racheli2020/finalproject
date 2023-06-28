@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Price Prediction</title>
+</head>
+<body>
+    <h1>Price Prediction Form</h1>
+    <form action="/" method="POST">
+
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required><br><br>
+
+        <label for="condition">Condition:</label>
+        <input type="text" name="condition" id="condition" required><br><br>
+
+        <label for="room_number">Number of Rooms:</label>
+        <input type="text" name="room_number" id="room_number" required><br><br>
+
+        <label for="Area">Area:</label>
+        <input type="text" name="Area" id="Area" required><br><br>
+
+        <label for="furniture">Furniture:</label>
+        <input type="text" name="furniture" id="furniture" required><br><br>
+
+        <label for="total_floors">Total Floors:</label>
+        <input type="text" name="total_floors" id="total_floors" required><br><br>
+
+        <label for="hasMamad">Has Mamad:</label>
+        <input type="number" name="hasMamad" id="hasMamad" required><br><br>
+
+        <label for="hasElevator">Has Elevator:</label>
+        <input type="number" name="hasElevator" id="hasElevator" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if output %}
+        <h2>Predicted Price:</h2>
+        <p>{{ output }}</p>
+    {% endif %}
+</body>
+</html>
